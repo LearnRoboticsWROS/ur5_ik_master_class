@@ -23,7 +23,7 @@ public:
           gripper(node, "robotiq_gripper"),
           planning_scene_interface(),
           logger(rclcpp::get_logger("PickAndPlace")),
-          node_(node),
+          node_(node), 
           tf_buffer(std::make_shared<tf2_ros::Buffer>(node_->get_clock())),
           tf_listener(std::make_shared<tf2_ros::TransformListener>(*tf_buffer))
     {
