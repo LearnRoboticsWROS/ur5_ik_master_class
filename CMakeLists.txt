@@ -44,8 +44,11 @@ ament_target_dependencies(pick_place rclcpp moveit_ros_planning_interface gazebo
 add_executable(pick_place_camera src/pick_place_camera.cpp)
 ament_target_dependencies(pick_place_camera rclcpp moveit_ros_planning_interface gazebo_msgs linkattacher_msgs ros2_linkattacher sensor_msgs pcl_conversions pcl_ros PCL geometry_msgs)
 
+add_executable(pick_place_cartesian src/pick_place_cartesian.cpp)
+ament_target_dependencies(pick_place_cartesian rclcpp moveit_ros_planning_interface gazebo_msgs linkattacher_msgs ros2_linkattacher sensor_msgs pcl_conversions pcl_ros PCL geometry_msgs)
+
 install(TARGETS 
-  ur5_ik_test pick_place pick_place_camera
+  ur5_ik_test pick_place pick_place_camera pick_place_cartesian
   DESTINATION lib/${PROJECT_NAME}/
 )
 
